@@ -2,13 +2,13 @@ package session;
 
 import browser.FactoryBrowser;
 import org.openqa.selenium.WebDriver;
-import util.GetProperties;
+import util.GetPropertiesTodoist;
 
 public class Session {
      private static Session instance=null;
      private WebDriver browser;
      private Session(){
-         browser= FactoryBrowser.make(GetProperties.getInstance().getBrowser()).create();
+         browser= FactoryBrowser.make(GetPropertiesTodoist.getInstance().getBrowser()).create();
      }
 
      public static Session getInstance(){
