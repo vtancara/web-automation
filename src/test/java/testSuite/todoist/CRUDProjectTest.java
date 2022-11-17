@@ -10,8 +10,8 @@ public class CRUDProjectTest extends TestBase {
 
     @Test
     public void verifyCRUDProject(){
-        String projectCreated="MOJIX"+new Date().getTime();
-        String projectUpdated="QA"+new Date().getTime();
+        String projectCreated="CREATED_PROJECT"+new Date().getTime();
+        String projectUpdated="UPDATED_PROJECT"+new Date().getTime();
 
         mainPage.loginLabel.click();
         loginSection.emailTxtBox.setText(user);
@@ -21,20 +21,27 @@ public class CRUDProjectTest extends TestBase {
 
         projectSection.addNewProjecButton.click();
         projectSection.nameProjectTxtBox.setText(projectCreated);
+        projectSection.colorProjectDropDown.click();
+        projectSection.selectBlueColorProjectDropDown.click();
+        projectSection.favoriteProjectCheckBox.click();
         projectSection.addButton.click();
         Assertions.assertTrue(projectSection.isProjectDisplayedInList(projectCreated),"ERROR! the project was not created");
 
-        projectSection.clickOnProject(projectCreated);
+        // updating project
         projectSection.menuProjectSection.menuIconButton.click();
         projectSection.menuProjectSection.editButton.click();
-        // projectSection.editProjectTxtBox.cleanSetText(projectUpdated);
-        // projectSection.saveButton.click();
+        projectSection.nameProjectTxtBox.cleanSetText("");
+        projectSection.nameProjectTxtBox.setText(projectUpdated);
+        projectSection.colorProjectDropDown.click();
+        projectSection.selectOrangeColorProjectDropDown.click();
+        projectSection.favoriteProjectCheckBox.click();
+        projectSection.saveButton.click();
         Assertions.assertTrue(projectSection.isProjectDisplayedInList(projectUpdated),"ERROR! the project was not updated");
 
-        projectSection.clickOnProject(projectUpdated);
+        // deleting project
         projectSection.menuProjectSection.menuIconButton.click();
         projectSection.menuProjectSection.deleteButton.click();
-        Session.getInstance().acceptAlert();
+        projectSection.deleteConfirmButton.click();
         projectSection.getProject(projectUpdated).waitControlIsNotInThePage();
         Assertions.assertFalse(projectSection.isProjectDisplayedInList(projectUpdated),"ERROR! the project was not deleted");
 

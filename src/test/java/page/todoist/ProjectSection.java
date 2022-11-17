@@ -12,8 +12,13 @@ public class ProjectSection {
     public Button addNewProjecButton = new Button(By.xpath("//button[contains(@aria-label,'Add project')]"));
     public TextBox nameProjectTxtBox= new TextBox(By.id("edit_project_modal_field_name"));
     public TextBox colorProjectDropDown= new TextBox(By.xpath("//button[contains(@aria-labelledby, 'edit_project_modal_field_color_label')]"));
-    public TextBox favoriteProjectCheckBox= new TextBox(By.xpath("//input[contains(@name, 'is_favorite')]"));
+    public TextBox selectBlueColorProjectDropDown= new TextBox(By.xpath("//span[text()='Sky Blue']"));
+    public TextBox selectOrangeColorProjectDropDown= new TextBox(By.xpath("//span[text()='Orange']"));
+    public TextBox favoriteProjectCheckBox= new TextBox(By.xpath("//div[contains(@class, 'reactist_switch')]"));
     public Button addButton= new Button(By.xpath("//button[text()='Add']"));
+    public Button saveButton= new Button(By.xpath("//button[text()='Save']"));
+
+    public Button deleteConfirmButton= new Button(By.xpath("//button/span[text()='Delete']"));
 
     public ProjectSection(){}
 
@@ -23,7 +28,7 @@ public class ProjectSection {
     }
 
     public boolean isProjectDisplayedInList(String nameProject){
-        Label projectCreated = new Label(By.xpath("//td[text()='"+nameProject+"']"));
+        Label projectCreated = new Label(By.xpath("//a[contains(@aria-label,'"+nameProject+"')]"));
         return projectCreated.isControlDisplayed();
     }
 
