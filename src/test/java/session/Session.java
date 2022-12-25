@@ -2,7 +2,6 @@ package session;
 
 import browser.FactoryBrowser;
 import org.openqa.selenium.WebDriver;
-import util.GetPropertiesTodoist;
 
 public class Session {
      private static Session instance=null;
