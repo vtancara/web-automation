@@ -49,7 +49,7 @@ public class BasicSeleniumTest2 {
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.id("ctl00_HeaderTopControl1_LinkButtonLogout")));
 
         Assertions.assertTrue(driver.findElement(By.id("ctl00_HeaderTopControl1_LinkButtonLogout")).isDisplayed()
-                                    ,"ERROR login was incorrect");
+                ,"ERROR login was incorrect");
 
         // create
         String nameProject="Mojix"+new Date().getTime();

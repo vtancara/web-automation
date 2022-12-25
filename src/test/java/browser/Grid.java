@@ -13,12 +13,12 @@ import java.time.Duration;
 public class Grid implements IBrowser{
     @Override
     public WebDriver create() {
-         WebDriver driver;
-         ChromeOptions options = new ChromeOptions();
-         DesiredCapabilities capabilities= new DesiredCapabilities();
-         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        WebDriver driver;
+        ChromeOptions options = new ChromeOptions();
+        DesiredCapabilities capabilities= new DesiredCapabilities();
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         try {
-            driver= new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities);
+            driver= new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"),capabilities);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
         } catch (MalformedURLException e) {

@@ -26,12 +26,12 @@ public class Control {
     }
 
     public boolean isControlDisplayed(){
-       try {
-           this.find();
-           return control.isDisplayed();
-       } catch (Exception e) {
-           return false;
-       }
+        try {
+            this.find();
+            return control.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public String getText(){
