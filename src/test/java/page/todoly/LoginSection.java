@@ -5,9 +5,9 @@ import control.TextBox;
 import org.openqa.selenium.By;
 
 public class LoginSection {
-    public TextBox emailTxtBox = new TextBox(By.id("ctl00_MainContent_LoginControl1_TextBoxEmail"));
-    public TextBox passwordTxtBox = new TextBox(By.id("ctl00_MainContent_LoginControl1_TextBoxPassword"));
-    public Button loginButton= new Button(By.id("ctl00_MainContent_LoginControl1_ButtonLogin"));
+    public TextBox emailTxtBox = new TextBox(By.id("emailOrPhone"));
+    public TextBox passwordTxtBox = new TextBox(By.id("password"));
+    public Button loginButton= new Button(By.xpath("//button[contains(@class, 'button__3eXSs')]"));
 
 
     public void login(String user, String pwd){

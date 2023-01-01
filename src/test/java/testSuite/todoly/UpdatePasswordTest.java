@@ -22,7 +22,7 @@ public class UpdatePasswordTest extends TestBase{
         settingsSection.okButton.click();
 
         menuSection.logoutButton.click();
-        mainPage.loginLabel.click();
+
         loginSection.login(email,newPwd);
         Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(),"ERROR no se pudo iniciar sesion");
     }

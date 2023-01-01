@@ -12,6 +12,11 @@ public class TextBox extends Control{
         this.control.sendKeys(value);
     }
 
+    public void sendKeys(String value, String val){
+        this.find();
+        this.control.sendKeys(value, val);
+    }
+
     public void cleanSetText(String value) {
         this.find();
         this.control.clear();
