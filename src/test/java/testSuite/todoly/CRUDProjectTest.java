@@ -2,7 +2,6 @@ package testSuite.todoly;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import session.Session;
 
 import java.util.Date;
 import org.openqa.selenium.Keys;
