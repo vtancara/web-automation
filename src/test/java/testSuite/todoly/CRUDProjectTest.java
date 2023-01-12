@@ -34,7 +34,7 @@ public class CRUDProjectTest extends TestBase{
         projectSection.clickOnProject(projectCreated);
         projectSection.menuProjectSection.editButton.click();
         projectSection.editProjectTxtBox.sendKeys(Keys.chord(Keys.CONTROL, "a"), projectUpdated);
-        projectSection.editProjectTxtBox.sendKeys(Keys.chord(Keys.COMMAND, "a"), projectUpdated);
+        // projectSection.editProjectTxtBox.sendKeys(Keys.chord(Keys.COMMAND, "a"), projectUpdated);
         projectSection.saveButton.click();
         Assertions.assertTrue(projectSection.isProjectDisplayedInList(projectUpdated),"ERROR! the project was not updated");
 
