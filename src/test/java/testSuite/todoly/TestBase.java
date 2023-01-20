@@ -24,6 +24,7 @@ public class TestBase {
      public void openBrowser(){
           // todo create property file
           Session.getInstance().getBrowser().get(GetProperties.getInstance().getHost());
+          Session.getInstance().getBrowser().manage().window().maximize();
      }
 
      @AfterEach
