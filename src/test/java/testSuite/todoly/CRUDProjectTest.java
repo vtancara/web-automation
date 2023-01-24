@@ -21,6 +21,7 @@ public class CRUDProjectTest extends TestBase{
         loginSection.emailTxtBox.setText(user);
         loginSection.passwordTxtBox.setText(password);
         loginSection.loginButton.click();
+        menuSection.settingButton.waitControlIsInThePage();
         menuSection.settingButton.click();
         Assertions.assertTrue(menuSection.logoutButton.isControlDisplayed(),"ERROR! the login was faield");
 
